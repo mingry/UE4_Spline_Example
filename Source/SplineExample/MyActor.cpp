@@ -19,28 +19,28 @@ void AMyActor::BeginPlay()
 
 	// Set Key Values
 	key_ps[0].Set(-100, 0, -1 - 0);	// for starting velocity.
-	key_ps[1].Set(0, 0, 100);		// key 1
-	key_ps[2].Set(150, 0, 300);		// key 2
-	key_ps[3].Set(150, 500, 300);	// key 3
-	key_ps[4].Set(0, 150, 200);		// key 4
-	key_ps[5].Set(-150, 200, 500);	// key5
-	key_ps[6].Set(-200, 300, 700);	// for ending velocity. 
+	key_ps[1].Set(0, 0, 100);       // key 1
+	key_ps[2].Set(150, 0, 300);     // key 2
+	key_ps[3].Set(150, 500, 300);   // key 3
+	key_ps[4].Set(0, 150, 200);     // key 4
+	key_ps[5].Set(-150, 200, 500);  // key5
+	key_ps[6].Set(-200, 300, 700);  // for ending velocity. 
 
-	key_qs[0] = FQuat(FRotator(0, 0, 0));	// for starting velocity.
-	key_qs[1] = FQuat(FRotator(0, 0, 0));	// key 1
-	key_qs[2] = FQuat(FRotator(0, 45, 0));	// key 2
-	key_qs[3] = FQuat(FRotator(0, 135, 45));	// key 3
-	key_qs[4] = FQuat(FRotator(60, 45, 60));	// key 4
-	key_qs[5] = FQuat(FRotator(90, 0, 0));	// key5
-	key_qs[6] = FQuat(FRotator(60, 30, 0));	// for ending velocity. 
+	key_qs[0] = FQuat(FRotator(0, 0, 0));      // for starting velocity.
+	key_qs[1] = FQuat(FRotator(0, 0, 0));      // key 1
+	key_qs[2] = FQuat(FRotator(0, 45, 0));     // key 2
+	key_qs[3] = FQuat(FRotator(0, 135, 45));   // key 3
+	key_qs[4] = FQuat(FRotator(60, 45, 60));   // key 4
+	key_qs[5] = FQuat(FRotator(90, 0, 0));     // key5
+	key_qs[6] = FQuat(FRotator(60, 30, 0));    // for ending velocity. 
 
 	key_ts[0] = -1;	// for starting velocity.
-	key_ts[1] = 0;	// key 1
-	key_ts[2] = 2;	// key 2
-	key_ts[3] = 4;	// key 3
-	key_ts[4] = 6;	// key 4
-	key_ts[5] = 8;	// key5
-	key_ts[6] = 9;	// for ending velocity. 
+	key_ts[1] = 0;  // key 1
+	key_ts[2] = 2;  // key 2
+	key_ts[3] = 4;  // key 3
+	key_ts[4] = 6;  // key 4
+	key_ts[5] = 8;  // key5
+	key_ts[6] = 9;  // for ending velocity. 
 
 
 	// Draw for Debug
