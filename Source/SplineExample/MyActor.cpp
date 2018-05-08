@@ -50,11 +50,10 @@ void AMyActor::BeginPlay()
 		DrawDebugBox(
 			GetWorld(),
 			key_ps[i],
-			FVector(10, 10, 10),		// size
+			FVector(10, 10, 10),   // size
 			key_qs[i],
-			FColor(255, 0, 255),	// color
-			true//false,  				//persistent (never goes away)
-				//0.03 					//point leaves a trail on moving object
+			FColor(255, 0, 255),   // color
+			true                   // persistent (never goes away)
 		);
 	}
 
@@ -65,7 +64,7 @@ void AMyActor::BeginPlay()
 			GetWorld(),
 			key_ps[i],
 			key_ps[i + 1],
-			FColor(255, 255, 0),
+			FColor(0, 0, 0),
 			true
 		);
 	}
