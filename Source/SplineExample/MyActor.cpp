@@ -28,11 +28,11 @@ void AMyActor::BeginPlay()
 
 	key_qs[0] = FQuat(FRotator(0, 0, 0));	// for starting velocity.
 	key_qs[1] = FQuat(FRotator(0, 0, 0));	// key 1
-	key_qs[2] = FQuat(FRotator(0, 90, 0));	// key 2
-	key_qs[3] = FQuat(FRotator(0, 90, 90));	// key 3
-	key_qs[4] = FQuat(FRotator(90, 0, 90));	// key 4
+	key_qs[2] = FQuat(FRotator(0, 45, 0));	// key 2
+	key_qs[3] = FQuat(FRotator(0, 135, 45));	// key 3
+	key_qs[4] = FQuat(FRotator(60, 45, 60));	// key 4
 	key_qs[5] = FQuat(FRotator(90, 0, 0));	// key5
-	key_qs[6] = FQuat(FRotator(90, 90, 0));	// for ending velocity. 
+	key_qs[6] = FQuat(FRotator(60, 30, 0));	// for ending velocity. 
 
 	key_ts[0] = -1;	// for starting velocity.
 	key_ts[1] = 0;	// key 1
