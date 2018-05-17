@@ -34,6 +34,11 @@ void AMyActor::BeginPlay()
 	key_qs[5] = FQuat(FRotator(90, 0, 0));     // key5
 	key_qs[6] = FQuat(FRotator(60, 30, 0));    // for ending velocity. 
 
+	for (int i = 1; i < num_keys; i++)
+	{
+		key_qs[i].EnforceShortestArcWith(key_qs[i - 1]);
+	}
+
 	key_ts[0] = -1;	// for starting velocity.
 	key_ts[1] = 0;  // key 1
 	key_ts[2] = 2;  // key 2
