@@ -47,6 +47,7 @@ void AMyActor::BeginPlay()
 	key_ts[5] = 8;  // key5
 	key_ts[6] = 9;  // for ending velocity. 
 
+	current_time = 0.f;
 
 	// Draw for Debug
 	// Key Points
@@ -75,26 +76,29 @@ void AMyActor::BeginPlay()
 	}
 }
 
+	
+
 // Called every frame
 void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 
-	float gt = GetGameTimeSinceCreation();
+	current_time += DeltaTime;
 
 	FVector result_p;
 	FQuat result_q;
 
-	if (gt < key_ts[1])	// if the current time (gt) is less than the first keytime (key_ts[1]).
+	if (current_time < key_ts[1])	// if the current time (gt) is less than the first keytime (key_ts[1]).
 	{
 		result_p = key_ps[1];
 		result_q = key_qs[1];
 	}
-	else if (gt > key_ts[num_keys-2]) // if the current time (gt) is greater than the last keytime (key_ts[num_keys-2]).
+	else if (current_time > key_ts[num_keys-2]) // if the current time (gt) is greater than the last keytime (key_ts[num_keys-2]).
 	{
 		result_p = key_ps[num_keys-2];
 		result_q = key_qs[num_keys-2];
+		current_time = 0.f;
 	}
 	else
 	{
@@ -102,7 +106,7 @@ void AMyActor::Tick(float DeltaTime)
 		int k_i = 1;	
 		for (int i = 1; i < num_keys - 2; i++)
 		{
-			if (gt < key_ts[i + 1])
+			if (current_time < key_ts[i + 1])
 			{
 				k_i = i;
 				break;
@@ -114,14 +118,14 @@ void AMyActor::Tick(float DeltaTime)
 			FMath::CubicCRSplineInterpSafe(
 				key_ps[k_i-1], key_ps[k_i], key_ps[k_i + 1], key_ps[k_i + 2],
 				key_ts[k_i-1], key_ts[k_i], key_ts[k_i+1], key_ts[k_i+2],
-				gt
+				current_time
 			);
 
 		result_q =
 			FMath::CubicCRSplineInterpSafe(
 				key_qs[k_i - 1], key_qs[k_i], key_qs[k_i + 1], key_qs[k_i + 2],
 				key_ts[k_i - 1], key_ts[k_i], key_ts[k_i + 1], key_ts[k_i + 2],
-				gt
+				current_time
 			);
 	}
 

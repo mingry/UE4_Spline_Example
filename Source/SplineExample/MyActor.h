@@ -29,5 +29,5 @@ public:
 	FQuat key_qs[num_keys];
 	float key_ts[num_keys];
 	
-	
+	float current_time;
 };
